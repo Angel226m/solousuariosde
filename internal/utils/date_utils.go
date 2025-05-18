@@ -106,3 +106,8 @@ func FechaEnRango(fecha, inicio, fin time.Time) bool {
 	fin = time.Date(fin.Year(), fin.Month(), fin.Day(), 0, 0, 0, 0, fin.Location())
 	return !fecha.Before(inicio) && !fecha.After(fin)
 }
+
+// ParseTime convierte una cadena HH:MM a time.Time
+func ParseTime(timeStr string) (time.Time, error) {
+	return time.Parse("15:04", timeStr)
+}
